@@ -2,7 +2,9 @@ import Navbar from "../components/Navbar";
 import bg from "../assets/bg.jpg";
 import Hero from "./Hero";
 import FeatureCards from "./FeatureCards";
-import Path from './Path'
+import Path from './PathPage';
+import Courses from './Courses'
+import Blog from "./Blog";
 const Home = () => {
     return (
         <div className="relative min-h-screen overflow-hidden">
@@ -41,6 +43,8 @@ const Home = () => {
             </section>
 
             <Path />
+            <Courses />
+            <Blog />
         </div>
     );
 };
