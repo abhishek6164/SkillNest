@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import bg from "../assets/bg.jpg";
 import Hero from "./Hero";
 import FeatureCards from "./FeatureCards";
-
+import Path from './Path'
 const Home = () => {
     return (
         <div className="relative min-h-screen overflow-hidden">
@@ -37,7 +37,10 @@ const Home = () => {
             {/* Features (no background here) */}
             <section className="relative z-10 mt-10 md:mt-20 pb-28 bg-transparent">
                 <FeatureCards />
+
             </section>
+
+            <Path />
         </div>
     );
 };
