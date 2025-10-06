@@ -5,6 +5,9 @@ import FeatureCards from "./FeatureCards";
 import Path from './PathPage';
 import Courses from './Courses'
 import Blog from "./Blog";
+import FAQ from './FAQ'
+import Join from './Join'
+import Footer from '../components/Footer'
 const Home = () => {
     return (
         <div className="relative min-h-screen overflow-hidden">
@@ -45,6 +48,9 @@ const Home = () => {
             <Path />
             <Courses />
             <Blog />
+            <FAQ />
+            <Join />
+            <Footer />
         </div>
     );
 };

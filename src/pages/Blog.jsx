@@ -1,11 +1,13 @@
 import React from 'react'
-import img1 from '../assets/Student.png'
-import img2 from '../assets/girl.png'
-import img3 from '../assets/react.svg'
-import img4 from '../assets/Student.png'
+import img1 from '../assets/blue1.jpeg'
+import img2 from '../assets/blue2.jpeg'
+import img3 from '../assets/blue3.jpeg'
+import img4 from '../assets/blue4.jpeg'
+import img5 from '../assets/girlblue1.jpeg'
+import img6 from '../assets/girlblue2.jpg'
 
 const Blog = () => {
-    const photos = [img1, img2, img3, img4, img1, img2, img4, img3]
+    const photos = [img1, img2, img3, img4, img5, img6, img2, img4]
 
     return (
         <section className="min-h-screen flex flex-col items-center justify-start py-24 px-6 bg-gradient-to-br from-white to-blue-50">
