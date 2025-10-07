@@ -1,4 +1,4 @@
-import student from "../assets/student.png"; // student's image
+import student from "../assets/boy.png"; // student's image
 
 const Path = () => {
     const features = [
@@ -70,12 +70,20 @@ const Path = () => {
                 </div>
 
                 {/* Right: Image */}
-                <div className="flex-1 relative w-full max-w-lg">
-                    <div className="rounded-2xl overflow-hidden shadow-xl bg-blue-100 ">
-                        <img src={student} alt="Student" className="w-full h-full object-cover rotate-90 mt-10" />
+                <div className="flex-1 relative w-full max-w-md">
+                    {/* Container with controlled height */}
+                    <div className="rounded-2xl overflow-hidden shadow-xl bg-blue-100 h-64 md:h-[80vh]">
+                        <img
+                            src={student}
+                            alt="Student"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
+
+                    {/* Decorative gradient blob */}
                     <div className="absolute -top-6 right-6 w-40 h-24 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-30 rounded-lg blur-3xl pointer-events-none" />
                 </div>
+
             </div>
         </section>
     );

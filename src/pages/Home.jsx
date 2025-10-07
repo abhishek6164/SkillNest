@@ -18,16 +18,16 @@ const Home = () => {
             {/* Hero Section with background image positioned at the top */}
             <section className="relative overflow-hidden pt-16 md:pt-36 h-[90vh] md:h-[100vh]">
                 {/* Background Image (only for Hero) */}
-                <div
+                {/* <div
                     className="absolute inset-0 -z-20 bg-cover bg-top brightness-[0.9]"
                     style={{
                         backgroundImage: `url(${bg})`,
                         backgroundPosition: "top center",
                     }}
-                />
+                /> */}
 
                 {/* Grid Overlay */}
-                <div
+                {/* <div
                     className="absolute inset-0 -z-10 pointer-events-none bg-transparent"
                     style={{
                         backgroundImage: `
@@ -36,7 +36,7 @@ const Home = () => {
       `,
                         backgroundSize: "80px 80px",
                     }}
-                />
+                /> */}
 
                 {/* Hero Section */}
                 <div className="relative z-10 flex items-center justify-center h-full">

@@ -1,4 +1,4 @@
-import student from "../assets/student.png";
+import student from "../assets/boy.png";
 
 const Path = () => {
     const features = [
