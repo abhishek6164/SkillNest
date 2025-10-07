@@ -1,8 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const links = ["Home", "Learning Path", "Courses", "Blogs"];
+    const links = [
+        { label: "Home", href: "#home" },
+        { label: "Learning Path", href: "#path" },
+        { label: "Courses", href: "#courses" },
+        { label: "Blogs", href: "#blog" },
+    ];
+
     const [active, setActive] = useState("Home");
+
+    useEffect(() => {
+        const ids = links.map((l) => l.href.replace('#', ''));
+        const observers = [];
+
+        const onScroll = () => {
+            // compute current section in view
+            let current = 'Home';
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= 120 && rect.bottom > 120) {
+                    current = id === 'home' ? 'Home' : (id === 'path' ? 'Learning Path' : id.charAt(0).toUpperCase() + id.slice(1));
+                    break;
+                }
+            }
+            setActive(current);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // run once to set initial active
+        onScroll();
+
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
@@ -25,17 +57,16 @@ const Navbar = () => {
           transition-all duration-500 hover:bg-white/20 hover:border-white/40"
                 >
                     {links.map((link) => (
-                        <button
-                            key={link}
-                            onClick={() => setActive(link)}
-                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 
-              ${active === link
-                                    ? "bg-indigo-600 text-white shadow-md"
-                                    : "text-gray-800 hover:text-indigo-600 hover:bg-white/40"
-                                }`}
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setActive(link.label)}
+                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                                active === link.label ? 'bg-indigo-600 text-white shadow-md' : 'text-gray-800 hover:text-indigo-600 hover:bg-white/40'
+                            }`}
                         >
-                            {link}
-                        </button>
+                            {link.label}
+                        </a>
                     ))}
                 </nav>
 
